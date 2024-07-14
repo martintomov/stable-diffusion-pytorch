@@ -1,3 +1,5 @@
+# encoder.py contains the encoder for the VAE model - VAE_Encoder class.
+
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -57,11 +59,6 @@ class VAE_Encoder(nn.Sequential):
             # (Batch_Size, 512, Height / 8, Width / 8) -> (Batch_Size, 512, Height / 8, Width / 8)
             nn.SiLU(), 
 
-            # Because the padding=1, it means the width and height will increase by 2
-            # Out_Height = In_Height + Padding_Top + Padding_Bottom
-            # Out_Width = In_Width + Padding_Left + Padding_Right
-            # Since padding = 1 means Padding_Top = Padding_Bottom = Padding_Left = Padding_Right = 1,
-            # Since the Out_Width = In_Width + 2 (same for Out_Height), it will compensate for the Kernel size of 3
             # (Batch_Size, 512, Height / 8, Width / 8) -> (Batch_Size, 8, Height / 8, Width / 8). 
             nn.Conv2d(512, 8, kernel_size=3, padding=1), 
 

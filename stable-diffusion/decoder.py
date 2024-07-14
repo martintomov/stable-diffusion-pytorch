@@ -1,3 +1,5 @@
+# decoder.py contains the implementation of the VAE_AttentionBlock and VAE_ResidualBlock classes.
+
 import torch
 from torch import nn
 from torch.nn import functional as F
@@ -22,7 +24,8 @@ class VAE_AttentionBlock(nn.Module):
         # (Batch_Size, Features, Height, Width) -> (Batch_Size, Features, Height * Width)
         x = x.view((n, c, h * w))
         
-        # (Batch_Size, Features, Height * Width) -> (Batch_Size, Height * Width, Features). Each pixel becomes a feature of size "Features", the sequence length is "Height * Width".
+        # (Batch_Size, Features, Height * Width) -> (Batch_Size, Height * Width, Features). 
+        # Each pixel becomes a feature of size "Features", the sequence length is "Height * Width".
         x = x.transpose(-1, -2)
         
         # Perform self-attention WITHOUT mask
