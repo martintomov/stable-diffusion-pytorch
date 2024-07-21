@@ -23,9 +23,14 @@ tokenizer = CLIPTokenizer("../data/tokenizer_vocab.json", merges_file="../data/t
 model_file = "../data/v1-5-pruned-emaonly.ckpt"
 models = model_loader.preload_models_from_standard_weights(model_file, DEVICE)
 
-# TEXT TO IMAGE
+# TEXT TO IMAGE PROMPTS
+# prompt = "A turtle swimming away in clear ocean water, highly detailed, realistic, ultra sharp, cinematic, 100mm lens, 8k resolution."
+# prompt = "An orange cat playing with tennis balls in a green backyard, highly detailed, realistic, ultra sharp, cinematic, 100mm lens, 8k resolution."
+# prompt = "A close up of man posing for a picture on a tropical island holding a coctail in hand, highly detailed, realistic, ultra sharp, cinematic, 100mm lens, 8k resolution."
+# prompt = "A medieval knight standing in a misty forest, highly detailed, realistic, ultra sharp, cinematic, 100mm lens, 8k resolution."
 
-prompt = "A small dog on the floor, highly detailed, ultra sharp, cinematic, 100mm lens, 8k resolution."
+# IMAGE TO IMAGE PROMPTS
+prompt = "A turtle, realistic, ultra sharp, cinematic, 100mm lens, 8k resolution."
 uncond_prompt = "" 
 do_cfg = True
 cfg_scale = 8  # min: 1, max: 14
@@ -33,8 +38,8 @@ cfg_scale = 8  # min: 1, max: 14
 # IMAGE TO IMAGE
 
 input_image = None
-image_path = "../img/dog.jpg"
-# input_image = Image.open(image_path)
+image_path = "../img/turtle.jpg"
+input_image = Image.open(image_path)
 # Higher values means more noise will be added to the input image, so the result will be further from the input image.
 # Lower values means less noise is added to the input image, so output will be closer to the input image.
 strength = 0.9

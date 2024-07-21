@@ -15,7 +15,7 @@ ddpm_sampler = DDPMSampler(generator)
 # How many noise levels to generate
 noise_levels = [0, 10, 50, 75, 100, 250, 500, 750]
 
-img = Image.open("../img/dog.jpg")
+img = Image.open("../img/turtle.jpg")
 img_tensor = torch.tensor(np.array(img))
 img_tensor = ((img_tensor / 255.0) * 2.0) - 1.0
 # Create a batch by repeating the same image many times
