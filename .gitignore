@@ -2,3 +2,4 @@
 .env
 .ckpt
 data/v1-5-pruned-emaonly.ckpt
+stable-diffusion/__pycache__
