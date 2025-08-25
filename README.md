@@ -43,7 +43,7 @@ Personal implementation of Stable Diffusion in PyTorch from scratch. Educational
 2. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/martintmv-git/stable-diffusion-pytorch.git
+    git clone https://github.com/martintomov/stable-diffusion-pytorch.git
     cd stable-diffusion-pytorch
     ```
 
